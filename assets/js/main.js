@@ -121,3 +121,38 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 });
+
+
+const currentYear = new Date().getFullYear();
+document.getElementById("year").textContent = currentYear;
+const form = document.getElementById("contactForm");
+const status = document.getElementById("formStatus");
+
+form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+            status.style.color = "green";
+            status.textContent = "Message sent successfully!";
+            form.reset();
+        } 
+        else {
+            status.style.color = "red";
+            status.textContent = "Failed to send message!";
+        }
+
+    } catch (error) {
+        status.style.color = "red";
+        status.textContent = "Something went wrong!";
+    }
+});
