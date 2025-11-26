@@ -57,6 +57,8 @@
                         </li>
                     </ul>
                 </div>
+                 <!-- Theme Change Button  -->
+                <i class="ri-moon-line change-theme" id="theme-button"></i>
             </nav>
         </header>
 
@@ -76,7 +78,7 @@
                             selling high-quality New & Old corrugated boxes of all sizes.
                         </p>
 
-                        <a href="Cateloge.pdf" target="_blank"  class="button__link">
+                        <a href="EKTAENTERPRISE-CATELOGE.pdf" target="_blank"  class="button__link">
                             Download<i class="ri-download-fill"></i>
                         </a>
                     </div>
@@ -767,11 +769,11 @@
             </p>
             <p class="about-us__contact">
                 <strong>Contact Us:</strong><br>
-                Address: Rameshwarn Nagar, <br> Gokhalana Road, 
-                Jasdan, <br> Dist Rajkot, Gujarat 360050<br><br>
+                Address: Baali Kanta, <br> Shiv Shakti Estate, 
+                Piplaj Road, <br> Ahmedabad - 382405<br><br>
                 Phone 1: <a href="tel:9979186216">+91 9979186216</a><br>
-                Phone 2: <a href="tel:9979186220">+91 9979186220</a><br>
-                Email: <a href="mailto:farukekta@gmail.com">farukekta@gmail.com</a>
+                Phone 2: <a href="tel:7383347298">+91 7383347298</a><br>
+                Email: <a href="mailto:ektaenterprise.info@gmail.com">ektaenterprise.info@gmail.com</a>
             </p>
             <a href="#" class="button__link">
                 Learn More <i class="ri-arrow-right-line"></i>
@@ -1022,7 +1024,56 @@
                 </div>
             </section>
 
-         
+         <section class="custom-contact-section">
+
+<!-- LEFT SIDE : LOCATION / MAP -->
+        <div class="custom-contact-left">
+            <h2>Our Location</h2>
+            <h4>EKTA ENTERPRISE</h4>
+            <p>Corrugated Box Manufacturer & Supplier</p>
+            <p>Baali Kanta, Shiv Shakti Estate,</p>
+            <p>Piplaj Road, Ahmedabad - 382405</p>
+
+            <iframe 
+                src="https://www.google.com/maps?q=22.9508154,72.5525559&output=embed"
+                class="map-frame"
+                loading="lazy">
+            </iframe>
+        </div>
+  <!-- RIGHT SIDE - GET IN TOUCH FORM -->
+<div class="custom-contact-right">
+    <h2>Get in Touch</h2>
+
+    <form id="contactForm" method="POST">
+
+        <input type="hidden" name="access_key" value="a96ffeb8-17ab-4a0f-b8bc-d87a6e7cbbaa">
+
+        <input type="text" id="name" name="name" placeholder="Full Name" required>
+
+        <input type="tel" id="phone" name="phone" placeholder="Mobile Number" required>
+
+        <input type="email" id="email" name="email" placeholder="Email Address" required>
+
+        <select id="product" name="product" required>
+            <option value="">Select Product</option>
+            <option value="Corrugated Box">Corrugated Box</option>
+            <option value="Bubble Roll">Bubble Roll</option>
+            <option value="Stretch Film Roll">Stretch Film Roll</option>
+            <option value="Custom Packaging">Custom Packaging</option>
+        </select>
+
+        <textarea id="message" name="message" rows="4" placeholder="Write your message..." required></textarea>
+
+        <button type="submit">Send Enquiry</button>
+
+    </form>
+
+    <p id="formStatus"></p>
+</div>
+
+
+</section>
+
 
         <!--==================== FOOTER ====================-->
         <footer class="footer section">
@@ -1112,15 +1163,16 @@
                 </div>
             </div>
 
-            <div class="footer__info container">
-                <span class="footer__copy">
-                    &#169; 2024 EKTA Enterprise. All rigths reserved
-                    </span>
+                    <div class="footer__info container">
+            <span class="footer__copy">
+                &#169; <span id="year"></span> EKTA Enterprise. All rights reserved
+            </span>
 
-                <a href="#" class="footer__privacy">
-                    Terms & Conditions
-                </a>
-            </div>
+            <a href="#" class="footer__privacy">
+                Terms & Conditions
+            </a>
+        </div>
+
         </footer>
 
         <!--========== SCROLL UP ==========-->
