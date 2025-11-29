@@ -120,9 +120,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // ================================= FORM SUBMIT API ==========================================
+// // Get form and status element
+const form = document.querySelector("#contactForm");
+const statusText = document.querySelector("#formStatus");
 
+// // Submit listener
 form.addEventListener("submit", async function (e) {
-    e.preventDefault();
+    e.preventDefault(); // // Stop auto submit
 
     const formData = new FormData(form);
 
@@ -133,25 +137,22 @@ form.addEventListener("submit", async function (e) {
         });
 
         const result = await response.json();
+        console.log(result); // // Show server response
 
         if (result.success) {
-            status.style.color = "green";
-            status.textContent = "Message sent successfully!";
+            statusText.style.color = "green";
+            statusText.textContent = "Message sent successfully!";
             form.reset();
-        } 
-        else {
-            status.style.color = "red";
-            status.textContent = "Failed to send message!";
+        } else {
+            statusText.style.color = "red";
+            statusText.textContent = "Failed to send message!";
         }
 
     } catch (error) {
-        status.style.color = "red";
-        status.textContent = "Something went wrong!";
+        statusText.style.color = "red";
+        statusText.textContent = "Something went wrong!";
     }
 });
-
 // ========================= FOOTER CHNAGE COPY RIGHT YEAR ==================================
 const currentYear = new Date().getFullYear();
 document.getElementById("year").textContent = currentYear;
-const form = document.getElementById("contactForm");
-const status = document.getElementById("formStatus");
