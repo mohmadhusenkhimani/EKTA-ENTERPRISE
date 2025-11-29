@@ -1040,18 +1040,19 @@
                 loading="lazy">
             </iframe>
         </div>
-  <!-- RIGHT SIDE - GET IN TOUCH FORM -->
+ <!-- RIGHT SIDE - GET IN TOUCH FORM -->
 <div class="custom-contact-right">
     <h2>Get in Touch</h2>
 
-    <form id="contactForm" method="POST">
+    <form id="contactForm" method="POST" action="https://api.web3forms.com/submit">
 
+        <!-- REQUIRED Web3Forms Keys -->
         <input type="hidden" name="access_key" value="453585a2-7e33-4027-b01a-efae147232ae">
+        <input type="hidden" name="from_name" value="Website Enquiry">
+        <input type="hidden" name="subject" value="New Contact Form Enquiry">
 
         <input type="text" id="name" name="name" placeholder="Full Name" required>
-
         <input type="tel" id="phone" name="phone" placeholder="Mobile Number" required>
-
         <input type="email" id="email" name="email" placeholder="Email Address" required>
 
         <select id="product" name="product" required>
@@ -1065,6 +1066,9 @@
         <textarea id="message" name="message" rows="4" placeholder="Write your message..." required></textarea>
 
         <button type="submit">Send Enquiry</button>
+
+        <!-- Status message will appear here -->
+        <p id="formStatus"></p>
 
     </form>
 
@@ -1190,6 +1194,3 @@
         <script src="assets/js/main.js"></script>
     </body>
 </html>
-
-
-
