@@ -49,13 +49,9 @@ const scrollActive = () =>{
 window.addEventListener('scroll', scrollActive)
 
 /*=============== SHOW SCROLL UP ===============*/ 
-const scrollUp = () =>{
-	const scrollUp = document.getElementById('scroll-up')
-    // When the scroll is higher than 350 viewport height, add the show-scroll class to the a tag with the scrollup class
-	this.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
-						          : scrollUp.classList.add('show-scroll')
-}
-window.addEventListener('scroll', scrollUp)
+const scrollUp = document.getElementById('scroll-up');
+scrollUp.classList.add('show-scroll');   // always visible
+
 
 /*=============== DARK LIGHT THEME ===============*/ 
 const themeButton = document.getElementById('theme-button')
@@ -123,10 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-const currentYear = new Date().getFullYear();
-document.getElementById("year").textContent = currentYear;
-const form = document.getElementById("contactForm");
-const status = document.getElementById("formStatus");
+// ================================= FORM SUBMIT API ==========================================
 
 form.addEventListener("submit", async function (e) {
     e.preventDefault();
@@ -156,3 +149,9 @@ form.addEventListener("submit", async function (e) {
         status.textContent = "Something went wrong!";
     }
 });
+
+// ========================= FOOTER CHNAGE COPY RIGHT YEAR ==================================
+const currentYear = new Date().getFullYear();
+document.getElementById("year").textContent = currentYear;
+const form = document.getElementById("contactForm");
+const status = document.getElementById("formStatus");
